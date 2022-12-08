@@ -7,7 +7,8 @@ export class DemoService {
 
   entries:string[] = [];
 
-  //constructor() { }
+  // constructor() {}
+
   addEntry(value: string) {
     this.entries = [...this.entries, value];
   }
