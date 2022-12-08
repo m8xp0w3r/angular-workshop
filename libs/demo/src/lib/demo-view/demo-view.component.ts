@@ -10,14 +10,7 @@ export class DemoViewComponent {
   @Input() listItems: string[] = [];
 
   entries:string[]|undefined;
-
-  condition = true;
-
   constructor(private demoService : DemoService) {
-  }
-
-  typeOf(value:any){
-    return typeof value;
   }
 
   clicked() {
@@ -25,7 +18,4 @@ export class DemoViewComponent {
     this.entries = this.demoService.getEntries();
   }
 
-  toggleView() {
-    this.condition = !this.condition;
-  }
 }
