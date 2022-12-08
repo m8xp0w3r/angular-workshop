@@ -9,10 +9,17 @@ import {DemoService} from "../demo.service";
 export class DemoViewComponent {
   @Input() listItems: string[] = [];
 
+  entries:string[]|undefined;
+
   constructor(private demoService : DemoService) {
+  }
+
+  typeOf(value:any){
+    return typeof value;
   }
 
   clicked() {
     this.demoService.addEntry("test");
+    this.entries = this.demoService.getEntries();
   }
 }
