@@ -1,5 +1,7 @@
+<button (click)="toggleView()">Toggle View</button>
+
 <button (click)="clicked()">Add</button>
-<ul *ngIf="entries && entries.length > 0">
+<ul *dilocShowView="entries">
   <li *ngFor="let entry of entries">
     {{entry}}
   </li>

@@ -11,6 +11,8 @@ export class DemoViewComponent {
 
   entries:string[]|undefined;
 
+  condition = true;
+
   constructor(private demoService : DemoService) {
   }
 
@@ -21,5 +23,9 @@ export class DemoViewComponent {
   clicked() {
     this.demoService.addEntry("test");
     this.entries = this.demoService.getEntries();
+  }
+
+  toggleView() {
+    this.condition = !this.condition;
   }
 }
