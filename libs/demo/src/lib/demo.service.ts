@@ -9,7 +9,7 @@ export class DemoService {
 
   //constructor() { }
   addEntry(value: string) {
-    this.entries.push(value);
+    this.entries = [...this.entries, value];
   }
 
   getEntries(){

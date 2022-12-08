@@ -1,8 +1,8 @@
 <button (click)="toggleView()">Toggle View</button>
 
 <button (click)="clicked()">Add</button>
-<ul *dilocShowView="entries">
+<ul *dilocShowView="entries; let tableSize = tableSize">
   <li *ngFor="let entry of entries">
-    {{entry}}
+    {{tableSize}} table ---- Entry: {{entry}}
   </li>
 </ul>
