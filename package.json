@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "serve-workshop": "nx serve angular-workshop"
   },
   "private": true,
   "dependencies": {
@@ -17,7 +18,11 @@
     "@angular/platform-browser": "~15.0.0",
     "@angular/platform-browser-dynamic": "~15.0.0",
     "@angular/router": "~15.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "@nrwl/angular": "^15.3.0",
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "eslint-plugin-html": "^7.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

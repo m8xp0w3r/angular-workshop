@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-workshop/demo": ["libs/demo/src/index.ts"],
+      "@angular-workshop/header": ["libs/header/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
