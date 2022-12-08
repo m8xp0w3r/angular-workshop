@@ -3,6 +3,6 @@
 <button (click)="clicked()">Add</button>
 <ul *dilocShowView="entries; let tableSize = tableSize">
   <li *ngFor="let entry of entries">
-    {{tableSize}} table ---- Entry: {{entry}}
+    {{tableSize | demo | uppercase}} table ---- Entry: {{entry}}
   </li>
 </ul>
