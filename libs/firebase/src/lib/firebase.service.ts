@@ -17,13 +17,18 @@ import {
 	query,
 	setDoc
 } from "@angular/fire/firestore";
+import { Auth, signInWithEmailAndPassword, UserCredential } from "@angular/fire/auth";
 
 @Injectable({
 	providedIn: 'root'
 })
 export class FirebaseService {
 
-	constructor(public firestore: Firestore) {
+	constructor(public firestore: Firestore, private auth: Auth) {
+	}
+
+	signIn(email: string, password: string): Promise<UserCredential> {
+		return signInWithEmailAndPassword(this.auth, email, password)
 	}
 
 	/**
