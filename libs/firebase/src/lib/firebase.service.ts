@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { QueryConstraint } from "@firebase/firestore";
 import { Observable } from "rxjs";
 import {
+	addDoc,
 	collection,
 	collectionData,
 	CollectionReference,
@@ -79,9 +80,20 @@ export class FirebaseService {
 	 * @param item The item which should be added to the collection.
 	 * @param documentId The id of the item which should be added.
 	 */
-	addItem<T>(collectionName: string, item: T, documentId: string): Promise<void> {
+	updateItem<T>(collectionName: string, item: T, documentId: string): Promise<void> {
 		const docRef = this.getDocumentReference<T>(collectionName, documentId);
 		return setDoc<T>(docRef, item);
+	}
+
+	/**
+	 * Adds an item.
+	 *
+	 * @param collectionName The name of the collection where the item should be added.
+	 * @param item The item which should be added to the collection.
+	 */
+	addItem<T>(collectionName: string, item: T): Promise<DocumentReference<T>> {
+		const collectionReference = collection(this.firestore, collectionName) as CollectionReference<T>;
+		return addDoc<T>(collectionReference, item);
 	}
 
 	/**
