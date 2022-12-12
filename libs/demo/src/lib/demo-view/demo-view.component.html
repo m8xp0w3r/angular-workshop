@@ -1,4 +1,48 @@
-<button (click)="clicked()">Add</button>
-<ul *dilocShowView="entries; let tableSize = tableSize">
-  <li *ngFor="let entry of entries" diloc-entry-row [entry]="entry" [tableSize]="tableSize"></li>
-</ul>
+<form [formGroup]="newPlayerForm" class="example-form">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Enter the name">
+  </mat-form-field>
+  <br>
+  <mat-checkbox [checked]="currentColor === entry" (change)="onColorChange($event)" formControlName="color" [value]="entry"
+    *ngFor="let entry of ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray']">{{entry}}</mat-checkbox>
+  <br>
+  <button mat-raised-button color="primary" (click)="addEntry()">Add</button>
+</form>
+
+<hr>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput placeholder="Enter the filter">
+</mat-form-field>
+
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+  </ng-container>
+
+  <!-- Progress Column -->
+  <ng-container matColumnDef="progress">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Progress</th>
+    <td mat-cell *matCellDef="let element">{{element.progress}}</td>
+  </ng-container>
+
+  <!-- Color Column -->
+  <ng-container matColumnDef="color">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>Color</th>
+    <td mat-cell *matCellDef="let element">{{element.color}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

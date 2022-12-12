@@ -3,19 +3,19 @@ import { Injectable } from '@angular/core';
 import { QueryConstraint } from "@firebase/firestore";
 import { Observable } from "rxjs";
 import {
-	addDoc,
-	collection,
-	collectionData,
-	CollectionReference,
-	deleteDoc,
-	doc,
-	docData,
-	DocumentReference,
-	DocumentSnapshot,
-	Firestore,
-	getDoc,
-	query,
-	setDoc
+  addDoc,
+  collection,
+  collectionData,
+  CollectionReference,
+  deleteDoc,
+  doc,
+  docData,
+  DocumentReference,
+  DocumentSnapshot,
+  Firestore,
+  getDoc, onSnapshot,
+  query,
+  setDoc
 } from "@angular/fire/firestore";
 import { Auth, signInWithEmailAndPassword, UserCredential } from "@angular/fire/auth";
 
