@@ -1,8 +1,8 @@
 {
-  "name": "demo",
+  "name": "firebase",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/demo/src",
+  "sourceRoot": "libs/firebase/src",
   "prefix": "diloc",
   "targets": {
     "test": {
@@ -11,7 +11,7 @@
         "{workspaceRoot}/coverage/{projectRoot}"
       ],
       "options": {
-        "jestConfig": "libs/demo/jest.config.ts",
+        "jestConfig": "libs/firebase/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -22,8 +22,8 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "libs/demo/**/*.ts",
-          "libs/demo/**/*.html"
+          "libs/firebase/**/*.ts",
+          "libs/firebase/**/*.html"
         ]
       }
     }

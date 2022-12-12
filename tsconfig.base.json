@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-workshop/demo": ["libs/demo/src/index.ts"]
+      "@angular-workshop/demo": ["libs/demo/src/index.ts"],
+      "@angular-workshop/firebase": ["libs/firebase/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
