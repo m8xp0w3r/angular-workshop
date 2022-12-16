@@ -5,7 +5,11 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "serve-ionic-demo": "nx serve ionic-demo",
+    "serve-ionic-demo-live": "nx serve ionic-demo --host $(ipconfig getifaddr en0)",
+    "run-ionic-demo-ios": "nx run ionic-demo:external:ios",
+    "run-ionic-demo-android": "nx run ionic-demo:external:android"
   },
   "private": true,
   "dependencies": {
@@ -20,8 +24,13 @@
     "@angular/platform-browser": "~15.0.0",
     "@angular/platform-browser-dynamic": "~15.0.0",
     "@angular/router": "~15.0.0",
+    "@capacitor/core": "^3.6.0",
+    "@ionic/angular": "^6.1.4",
     "@nrwl/angular": "^15.3.0",
+    "@nxext/capacitor": "^15.0.1",
+    "@nxext/ionic-angular": "^14.0.0",
     "firebase": "^9.15.0",
+    "ip": "^2.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -34,6 +43,10 @@
     "@angular/cli": "~15.0.0",
     "@angular/compiler-cli": "~15.0.0",
     "@angular/language-service": "~15.0.0",
+    "@capacitor/android": "^3.6.0",
+    "@capacitor/cli": "^3.6.0",
+    "@capacitor/ios": "^3.6.0",
+    "@nrwl/angular": "^14.0.0",
     "@nrwl/cypress": "15.3.0",
     "@nrwl/eslint-plugin-nx": "15.3.0",
     "@nrwl/jest": "15.3.0",
